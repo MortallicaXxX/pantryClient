@@ -5,7 +5,6 @@ class pantry{
   }
 
   pantryClient = function(PANTRY_ID){
-    // https://getpantry.cloud/apiv1/pantry/YOUR_PANTRY_ID
 
     if(!PANTRY_ID)throw "PANTRY_ID manquant";
     this.__proto__.Basket = null;
@@ -113,8 +112,6 @@ class pantry{
     }
     this.__proto__.onError = function(err){
       var now = new Date;
-      var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() ,
-      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
       console.error({err : err , time : `${now.getUTCHours()}:${now.getUTCMinutes()}:${now.getUTCSeconds()}.${now.getUTCMilliseconds()}`});
     }
     this.__proto__.getErrors = function(){
