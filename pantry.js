@@ -131,20 +131,3 @@ class pantry{
 pantry.prototype.a_Internet = function () {
   return document.location ? {r:1,msg:`connecter à internet`} : {r:0,msg:`il semblerait qu'il manque internet`}
 };
-
-  // ----------------------- //
-  // -----Partie de test-----//
-  // ----------------------- //
-
-// const pantryClient = (new pantry()).pantryClient;
-// const client = new pantryClient("");
-//
-// client.connect(function(err) {
-//   console.log(`PantryClient est prêt.`);
-//   console.log(client);
-//   // const db = client.db(dbName);
-//   // client.close();
-//   client.basket('').content(function(err,result){
-//     console.log(err,result);
-//   });
-// });
