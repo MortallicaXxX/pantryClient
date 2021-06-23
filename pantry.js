@@ -1,5 +1,9 @@
 class pantry{
 
+  constructor(){
+    this.test_validite();
+  }
+
   pantryClient = function(PANTRY_ID){
     // https://getpantry.cloud/apiv1/pantry/YOUR_PANTRY_ID
 
@@ -128,6 +132,10 @@ class pantry{
 
 }
 
+pantry.prototype.test_validite = function () {
+  this.a_Internet();
+};
+
 pantry.prototype.a_Internet = function () {
-  return document.location ? {r:1,msg:`connecter à internet`} : {r:0,msg:`il semblerait qu'il manque internet`}
+  return window.navigator.onLine ? console.log({r:1,msg:`connecter à internet`}) : console.error({r:0,code:'errco',msg:`il semblerait qu'il manque internet`});
 };
