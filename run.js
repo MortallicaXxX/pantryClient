@@ -1,12 +1,27 @@
 const pantryClient = (new pantry()).pantryClient;
-const client = new pantryClient("");
+const client = new pantryClient("PANTRY_ID");
 
-client.connect(function(err) {
+client.connect(async function(err) {
   console.log(`PantryClient est prêt.`);
   console.log(client);
-  // const db = client.db(dbName);
-  // client.close();
-  client.basket('').content(function(err,result){
-    console.log(err,result);
+
+  client.basket('basketName').content(function(err,result){
+    if(err)throw err;
+    else console.log(result);
   });
+
+  client.basket('basketName').insert({test:"test"},function(err,result){
+    if(err)throw err;
+    else console.log(result);
+  });
+
+  client.basket('basketName').update({test:"lol"},function(err,result){
+    if(err)throw err;
+    else console.log(result);
+  });
+
+  client.basket('basketName').delete(function(err,result){
+    if(err)throw err;
+    else console.log(result);
+  })
 });
