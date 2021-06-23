@@ -1,2 +1,2 @@
 # pantryClient
-client pour le cloud pantry
+client pour le cloud JSON pantry
